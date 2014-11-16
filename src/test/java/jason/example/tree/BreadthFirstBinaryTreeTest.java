@@ -5,14 +5,14 @@ import jason.example.tree.dataobject.BinaryTreeNode;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DepthFirstBinaryTreeTest {
+public class BreadthFirstBinaryTreeTest {
 
-    DepthFirstBinaryTree tree;
+    BreadthFirstBinaryTree tree;
     BinaryTreeNode node;
 
     @Before
     public void setup() {
-        tree = new DepthFirstBinaryTree();
+        tree = new BreadthFirstBinaryTree();
 
         node = tree.insert(7);
         node = tree.insert(node, 1);
@@ -29,26 +29,10 @@ public class DepthFirstBinaryTreeTest {
     }
 
     @Test
-    public void testPrintPreOrderGood() {
+    public void testPrintBreadthFirstOrderGood() {
 
-        System.out.print(" Nodes PreOrder: ");
-        tree.printPreOrder(node);
-        System.out.println();
-    }
-
-    @Test
-    public void testPrintPostOrderGood() {
-
-        System.out.print(" Nodes PostOrder: ");
-        tree.printPostOrder(node);
-        System.out.println();
-    }
-
-    @Test
-    public void testPrintInOrderGood() {
-
-        System.out.print(" Nodes InOrder: ");
-        tree.printInOrder(node);
+        System.out.print(" Nodes BreadthFirst: ");
+        tree.printBreadthFirstOrder(node);
         System.out.println();
     }
 }

@@ -3,7 +3,7 @@ package jason.example.tree.dataobject;
 public class BinaryTreeNode {
     private BinaryTreeNode leftNode;
     private BinaryTreeNode rightNode;
-    Integer data;
+    private Integer data;
 
     public BinaryTreeNode() {
         this(null);
@@ -97,5 +97,4 @@ public class BinaryTreeNode {
 
         return true;
     }
-
 }
