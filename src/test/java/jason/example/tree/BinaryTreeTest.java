@@ -28,4 +28,39 @@ public class BinaryTreeTest {
         assertEquals(expected, response);
     }
 
+    @Test
+    public void testSizeGood() {
+        BinaryTreeNode node = bi.insert(2);
+        node = bi.insert(node, 1);
+        node = bi.insert(node, 3);
+        node = bi.insert(node, 5);
+        node = bi.insert(node, 4);
+        Integer response = bi.size(node);
+
+        assertEquals(new Integer(5), response);
+    }
+
+    @Test
+    public void testMinGood() {
+        BinaryTreeNode node = bi.insert(5);
+        node = bi.insert(node, 4);
+        node = bi.insert(node, 3);
+        node = bi.insert(node, 2);
+        node = bi.insert(node, 1);
+        Integer response = bi.min(node);
+
+        assertEquals(new Integer(1), response);
+    }
+
+    @Test
+    public void testMaxGood() {
+        BinaryTreeNode node = bi.insert(1);
+        node = bi.insert(node, 2);
+        node = bi.insert(node, 3);
+        node = bi.insert(node, 5);
+        node = bi.insert(node, 4);
+        Integer response = bi.max(node);
+
+        assertEquals(new Integer(5), response);
+    }
 }
