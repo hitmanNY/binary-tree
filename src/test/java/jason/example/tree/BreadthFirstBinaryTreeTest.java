@@ -35,4 +35,13 @@ public class BreadthFirstBinaryTreeTest {
         tree.printBreadthFirstOrder(node);
         System.out.println();
     }
+
+    @Test
+    public void playpenTest() {
+        String aa = "Aa";
+        String bb = "BB";
+
+        System.out.println(aa + " hashCode=" + aa.hashCode());
+        System.out.println(bb + " hashCode=" + bb.hashCode());
+    }
 }
