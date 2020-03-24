@@ -7,7 +7,11 @@ public class DepthFirstBinaryTree extends BinaryTree {
     // Visit Node
     // Traverse Left
     // Traverse Right
-    public void printPreOrder(BinaryTreeNode node) {
+    public void printPreOrder() {
+        printPreOrder(this.node);
+    }
+
+    private void printPreOrder(BinaryTreeNode node) {
 
         if (node == null) {
             return;
@@ -21,14 +25,16 @@ public class DepthFirstBinaryTree extends BinaryTree {
         if (node.getRightNode() != null) {
             printPreOrder(node.getRightNode());
         }
-
-        return;
     }
 
     // Traverse Left
     // Visit Node
-    // Traverse Rightt
-    public void printInOrder(BinaryTreeNode node) {
+    // Traverse Right
+    public void printInOrder() {
+        printInOrder(node);
+    }
+
+    private void printInOrder(BinaryTreeNode node) {
 
         if (node == null) {
             return;
@@ -43,14 +49,16 @@ public class DepthFirstBinaryTree extends BinaryTree {
         if (node.getRightNode() != null) {
             printInOrder(node.getRightNode());
         }
-
-        return;
     }
 
     // Traverse Left
     // Traverse Right
     // Visit Node
-    public void printPostOrder(BinaryTreeNode node) {
+    public void printPostOrder() {
+        printPostOrder(node);
+    }
+
+    private void printPostOrder(BinaryTreeNode node) {
 
         if (node == null) {
             return;
@@ -64,7 +72,5 @@ public class DepthFirstBinaryTree extends BinaryTree {
         }
 
         printNodeValue(node);
-
-        return;
     }
 }

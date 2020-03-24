@@ -3,7 +3,7 @@ package jason.example.tree;
 import jason.example.tree.dataobject.BinaryTreeNode;
 
 public class BinaryTree {
-    private BinaryTreeNode node;
+    BinaryTreeNode node;
 
     public BinaryTree() {
         node = null;
@@ -22,18 +22,15 @@ public class BinaryTree {
     private BinaryTreeNode insert(BinaryTreeNode node, int data) {
         if (node == null) {
             node = new BinaryTreeNode(data);
-        }
-        else if (data < node.getData()) {
+        } else if (data < node.getData()) {
             node.setLeftNode(insert(node.getLeftNode(), data));
-        }
-        else if (data > node.getData()) {
+        } else if (data > node.getData()) {
             node.setRightNode(insert(node.getRightNode(), data));
         }
         return node;
     }
 
-    public int min()
-    {
+    public int min() {
         return min(node);
     }
 
@@ -46,10 +43,10 @@ public class BinaryTree {
         return node.getData();
     }
 
-    public int max()
-    {
+    public int max() {
         return max(node);
     }
+
     private int max(BinaryTreeNode node) {
         System.out.println("Checking Right Node Value=" + node.getData());
         if (node.getRightNode() != null) {
@@ -65,16 +62,14 @@ public class BinaryTree {
         }
     }
 
-    public int size()
-    {
+    public int size() {
         return size(node);
     }
 
     private int size(BinaryTreeNode node) {
         int count = 0;
 
-        if ( node != null)
-        {
+        if (node != null) {
             count = 1 + size(node.getLeftNode()) + size(node.getRightNode());
         }
 

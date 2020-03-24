@@ -2,9 +2,6 @@ package jason.example.tree;
 
 import jason.example.tree.dataobject.BinaryTreeNode;
 
-import org.junit.Before;
-import org.junit.Test;
-
 public class BreadthFirstBinaryTreeTest {
 
     BreadthFirstBinaryTree tree;

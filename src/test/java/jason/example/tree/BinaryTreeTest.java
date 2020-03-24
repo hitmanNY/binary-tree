@@ -1,12 +1,10 @@
 package jason.example.tree;
 
-import static org.junit.Assert.assertEquals;
 import jason.example.tree.dataobject.BinaryTreeNode;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.swing.tree.TreeNode;
+import static org.junit.Assert.assertEquals;
 
 public class BinaryTreeTest {
     private BinaryTree bi;
