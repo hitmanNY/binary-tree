@@ -6,6 +6,8 @@ import jason.example.tree.dataobject.BinaryTreeNode;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.swing.tree.TreeNode;
+
 public class BinaryTreeTest {
     private BinaryTree bi;
 
@@ -16,7 +18,7 @@ public class BinaryTreeTest {
 
     @Test
     public void testSingleInsertTestGood() {
-        Integer data = new Integer(3);
+        int data = 5;
 
         BinaryTreeNode expected = new BinaryTreeNode();
         expected.setData(data);
@@ -29,38 +31,58 @@ public class BinaryTreeTest {
     }
 
     @Test
-    public void testSizeGood() {
-        BinaryTreeNode node = bi.insert(2);
-        node = bi.insert(node, 1);
-        node = bi.insert(node, 3);
-        node = bi.insert(node, 5);
-        node = bi.insert(node, 4);
-        Integer response = bi.size(node);
+    public void testDoubleInsertTestGood() {
+        int firstData = 5;
+        int secondData = 1;
 
-        assertEquals(new Integer(5), response);
+        BinaryTreeNode leftLeaf = new BinaryTreeNode();
+
+        leftLeaf.setData(secondData);
+        leftLeaf.setLeftNode(null);
+        leftLeaf.setRightNode(null);
+
+        BinaryTreeNode expected = new BinaryTreeNode();
+
+        expected.setData(firstData);
+        expected.setLeftNode(leftLeaf);
+        expected.setRightNode(null);
+
+        bi.insert(firstData);
+        BinaryTreeNode response = bi.insert(secondData);
+
+        assertEquals(expected, response);
+    }
+
+    @Test
+    public void testSizeGood() {
+        bi.insert(2);
+        bi.insert(1);
+        bi.insert(3);
+        bi.insert(5);
+        bi.insert(4);
+
+        assertEquals(5, bi.size());
     }
 
     @Test
     public void testMinGood() {
-        BinaryTreeNode node = bi.insert(5);
-        node = bi.insert(node, 4);
-        node = bi.insert(node, 3);
-        node = bi.insert(node, 2);
-        node = bi.insert(node, 1);
-        Integer response = bi.min(node);
+        bi.insert(5);
+        bi.insert(4);
+        bi.insert(3);
+        bi.insert(2);
+        bi.insert(1);
 
-        assertEquals(new Integer(1), response);
+        assertEquals(1, bi.min());
     }
 
     @Test
     public void testMaxGood() {
-        BinaryTreeNode node = bi.insert(1);
-        node = bi.insert(node, 2);
-        node = bi.insert(node, 3);
-        node = bi.insert(node, 5);
-        node = bi.insert(node, 4);
-        Integer response = bi.max(node);
+        bi.insert(1);
+        bi.insert(2);
+        bi.insert(3);
+        bi.insert(15);
+        bi.insert(4);
 
-        assertEquals(new Integer(5), response);
+        assertEquals(15, bi.max());
     }
 }

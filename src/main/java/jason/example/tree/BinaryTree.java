@@ -3,22 +3,23 @@ package jason.example.tree;
 import jason.example.tree.dataobject.BinaryTreeNode;
 
 public class BinaryTree {
-    BinaryTreeNode node;
+    private BinaryTreeNode node;
 
     public BinaryTree() {
         node = null;
     }
 
-    public BinaryTree(Integer data) {
+    public BinaryTree(int data) {
         node = insert(node, data);
     }
 
-    public BinaryTreeNode insert(Integer data) {
-        node = insert(null, data);
+    public BinaryTreeNode insert(int data) {
+        node = insert(node, data);
+
         return node;
     }
 
-    public BinaryTreeNode insert(BinaryTreeNode node, Integer data) {
+    private BinaryTreeNode insert(BinaryTreeNode node, int data) {
         if (node == null) {
             node = new BinaryTreeNode(data);
         }
@@ -31,7 +32,12 @@ public class BinaryTree {
         return node;
     }
 
-    public Integer min(BinaryTreeNode node) {
+    public int min()
+    {
+        return min(node);
+    }
+
+    private int min(BinaryTreeNode node) {
         System.out.println("Checking Left Node Value=" + node.getData());
         if (node.getLeftNode() != null) {
             return min(node.getLeftNode());
@@ -40,7 +46,11 @@ public class BinaryTree {
         return node.getData();
     }
 
-    public Integer max(BinaryTreeNode node) {
+    public int max()
+    {
+        return max(node);
+    }
+    private int max(BinaryTreeNode node) {
         System.out.println("Checking Right Node Value=" + node.getData());
         if (node.getRightNode() != null) {
             return max(node.getRightNode());
@@ -55,14 +65,16 @@ public class BinaryTree {
         }
     }
 
-    public Integer size(BinaryTreeNode node) {
-        Integer count = 0;
+    public int size()
+    {
+        return size(node);
+    }
 
-        if (node == null) {
-            count = 0;
-        }
+    private int size(BinaryTreeNode node) {
+        int count = 0;
 
-        else {
+        if ( node != null)
+        {
             count = 1 + size(node.getLeftNode()) + size(node.getRightNode());
         }
 
